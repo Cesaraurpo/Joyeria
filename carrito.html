@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito de Compras - Joyería COG</title>
+  <link rel="stylesheet" href="CSS/Estilos.css" />
+</head>
+<body>
+  <header>
+    <h1>🛍️ Carrito de Compras</h1>
+    <nav><a href="catalogo.html" class="btn">← Volver al catálogo</a></nav>
+  </header>
+
+  <main class="carrito-container">
+    <section id="carrito-lista"></section>
+
+    <div class="total-pago">
+      <h3>Total: $<span id="total"></span></h3>
+
+      <h4>Método de pago:</h4>
+      <form id="form-pago">
+        <label><input type="radio" name="metodo" value="Tarjeta de Crédito" required /> Tarjeta de Crédito</label><br/>
+        <label><input type="radio" name="metodo" value="Bancolombia" /> Botón Bancolombia</label><br/>
+        <label><input type="radio" name="metodo" value="PayPal" /> PayPal</label><br/>
+        <label><input type="radio" name="metodo" value="PSE" /> PSE</label><br/><br/>
+        <button type="submit" class="btn">Realizar pago</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>📞 Soporte: contacto@joyeriacog.com</p>
+    <p>💬 WhatsApp: +57 300 123 4567</p>
+    <p>© 2025 Joyería COG. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const contenedor = document.getElementById('carrito-lista');
+    const totalSpan = document.getElementById('total');
+  
+    function renderizarCarrito() {
+      contenedor.innerHTML = "";
+      let total = 0;
+  
+      if (carrito.length === 0) {
+        contenedor.innerHTML = "<p>Tu carrito está vacío.</p>";
+      } else {
+        carrito.forEach((item, index) => {
+          const div = document.createElement('div');
+          div.classList.add('producto');
+          div.innerHTML = `
+            <h4>${item.nombre}</h4>
+            <p>Precio: $${item.precio.toLocaleString()}</p>
+            <button onclick="eliminarProducto(${index})">🗑️ Eliminar</button>
+          `;
+          contenedor.appendChild(div);
+          total += item.precio;
+        });
+      }
+  
+      totalSpan.textContent = total.toLocaleString();
+    }
+  
+    function eliminarProducto(indice) {
+      carrito.splice(indice, 1);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      renderizarCarrito();
+    }
+  
+    document.getElementById('form-pago').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+      const metodo = document.querySelector('input[name="metodo"]:checked').value;
+      alert("Gracias por tu compra. Has elegido pagar con: " + metodo);
+      localStorage.removeItem('carrito');
+      location.reload();
+    });
+
+    renderizarCarrito();
+  </script>
+</body>
+</html>

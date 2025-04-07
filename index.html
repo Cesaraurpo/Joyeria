@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joyería COG</title>
+  <link rel="stylesheet" href="CSS/Estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">
+        Joyer<span class="letra-i">í<i class="fas fa-crown corona"></i></span>a COG
+      </h1>    <nav>
+      <div class="menu-toggle">☰</div>
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="#nosotros">Sobre Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar joyas..." />
+        <button>🔍</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Descubre el brillo de lo moderno</h2>
+      <p>Diseños exclusivos y elegancia atemporal</p>
+      <a href="catalogo.html" class="btn">Ver catálogo</a>
+    </section>
+
+    <section class="nosotros" id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>
+        En <strong>Joyería COG</strong> somos un negocio apasionado por el arte de la joyería y los accesorios de alta gama.
+        Nos especializamos en ofrecer piezas elegantes, duraderas y cuidadosamente seleccionadas.
+        Nuestro compromiso con la calidad, la atención personalizada y la confianza de nuestros clientes nos posiciona como una opción segura y sofisticada en el mercado.
+      </p>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div class="footer-content">
+      <p>📞 Soporte: contacto@joyeriacog.com</p>
+      <p>💬 WhatsApp: +57 300 123 4567</p>
+      <p>© 2025 Joyería COG. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

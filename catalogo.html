@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo - Joyería COG</title>
+  <link rel="stylesheet" href="CSS/Estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="Music/PAWSA _ Adventures of Stevie V - Dirty Cash (Money Talks)(MP3_160K).mp3" type="audio/mpeg" />
+        Tu navegador no soporta audio.
+      </audio>
+  <header>
+    <h1>Catálogo Joyería COG</h1>
+    <nav>
+      <a href="index.html" class="btn">← Volver al inicio</a>
+    </nav>
+  </header>
+  <a href="Carrito.html" class="btn">🛒 Ver carrito</a>
+  <main>
+    <section class="catalogo">
+      <div class="producto">
+        <img src="IMG/anillo de plata.jpg" alt="Anillo de plata" />
+        <h3>Anillo de Plata</h3>
+        <p>$240.000</p><button onclick="agregarAlCarrito('Anillo de Plata', 240000)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="IMG/manilla de oro.jpg" alt="Pulsera Tejido GUCCI, Oro 18K" />
+        <h3>Pulsera Tejido GUCCI, Oro 18K</h3>
+        <p>$2.399.000</p>
+        <button onclick="agregarAlCarrito('Pulsera Tejido GUCCI, Oro 18K', 2399000)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="IMG/collar de perlas.jpg" alt="Collar de perlas" />
+        <h3>Collar de Perlas</h3>
+        <p>$1.500.000</p>
+        <button onclick="agregarAlCarrito('Collar de Perlas', 1500000)">Agregar al carrito</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>📞 Soporte: contacto@joyeriacog.com</p>
+    <p>💬 WhatsApp: +57 300 123 4567</p>
+    <p>© 2025 Joyería COG. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    function agregarAlCarrito(nombre, precio) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert(nombre + " agregado al carrito.");
+    }
+  </script>
+
+</body>
+</html>

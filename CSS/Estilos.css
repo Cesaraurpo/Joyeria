@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #fefefe;
+  color: #333;
+}
+
+header {
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: whitesmoke;
+}
+  
+.letra-i {
+    position: relative;
+}
+  
+.corona {
+    position: absolute;
+    top: 0;
+    left: -0.3em;
+    font-size: 0.5em;
+    color: gold;
+    transform: rotate(-10deg);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f0c040;
+}
+
+.search-bar {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  padding: 0.4rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  background: #f0c040;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero {
+  background: url('joyeria.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: #f0c040;
+  padding: 0.7rem 1.2rem;
+  color: #111;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.nosotros {
+    padding: 3rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+  
+.nosotros h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+  
+.nosotros p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+  
+footer {
+    background: #111;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+  
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: #f9f9f9;
+}
+  
+.producto {
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+  
+.producto:hover {
+    transform: scale(1.03);
+}
+  
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+  
+.producto h3 {
+    margin: 0.8rem 0 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+  
+.producto p {
+    font-weight: bold;
+    color: #f0c040;
+    font-size: 1.1rem;
+}
+  
+.carrito-container {
+    padding: 2rem;
+}
+  
+#carrito-lista .producto {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+  
+.total-pago {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+  
+.total-pago h4 {
+    margin-top: 1rem;
+}
+  
+.total-pago form label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #222;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .search-bar {
+    margin: 1rem auto 0;
+    justify-content: center;
+  }
+}
